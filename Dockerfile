@@ -1,19 +1,16 @@
-# stable official Java runtime base image
-FROM openjdk:17-jdk-alpine
+# this is the docker file credited on 
+# date: 28-May-26
+# this is the java program
 
-# metadata
-LABEL maintainer="your-email@example.com"
-LABEL version="1.0"
-LABEL description="A simple Java application"
 
-# working directory
+FROM eclipse-temurin:17-alpine
+
 WORKDIR /app
 
-# Copy source code into the container
 COPY src/Main.java /app/Main.java
 
-# Compile the Java code
 RUN javac Main.java
 
-# Run the Java application when the container starts
-CMD ["java", "Main"]
+CMD ["java" , "Main"]
+
+
